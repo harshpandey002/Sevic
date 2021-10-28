@@ -131,7 +131,7 @@ export const Box = ({ width, height, src, variants }) => {
       className={styles.img}
     >
       <img
-        style={{ transform: `translateY(${offsetY * 0.1 - 80}px)` }}
+        style={{ transform: `translateY(${offsetY * 0.15 - 80}px)` }}
         src={src}
         alt=""
       />
