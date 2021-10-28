@@ -124,8 +124,6 @@ export const Box = ({ width, height, src, variants }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  console.log(offsetY);
-
   return (
     <motion.div
       variants={variants}
