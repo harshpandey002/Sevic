@@ -11,7 +11,7 @@ export default function Hero() {
           <div className={styles.heading}>
             <div>
               <h1>
-                <span style={{ color: "#2c2c2c" }}>UI/UX Design.</span>{" "}
+                <span style={{ color: "#5c5c5c" }}>UI/UX Design.</span>{" "}
                 <span style={{ color: "#9c9c9c" }}>Website Development.</span>{" "}
               </h1>
             </div>
@@ -24,10 +24,10 @@ export default function Hero() {
           </div>
 
           <div className={styles.squareImg}>
-            <img
+            {/* <img
               src="https://images.unsplash.com/photo-1634153570366-deda92ecf625?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNTQyNjExMw&ixlib=rb-1.2.1&q=80&w=500"
               alt=""
-            />
+            /> */}
           </div>
         </div>
         <div className={styles.bottom}>
