@@ -11,6 +11,11 @@
   box-sizing: border-box;
 }
 
+*::selection {
+  background-color: black;
+  color: white;
+}
+
 html,
 body {
   font-family: "Poppins", sans-serif;
