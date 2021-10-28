@@ -24,8 +24,8 @@ export default function EduCompanion() {
 
 export const Box = ({ src, name }) => {
   const [ref, inView] = useInView({
-    threshold: 0.5,
-    triggerOnce: false,
+    threshold: 0.2,
+    // triggerOnce: true,
   });
   const animation = useAnimation();
   useEffect(() => {

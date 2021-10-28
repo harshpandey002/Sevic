@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 5rem;
 }
 
 .content {
@@ -12,6 +13,7 @@
   flex-direction: column;
   margin: 0 auto;
   position: relative;
+  transition: all 0.3s;
 }
 
 .img {
@@ -77,7 +79,7 @@
 .heading h1 {
   font-family: var(--font);
   font-size: 4rem;
-  color: #4e4e4e;
+  color: #818181;
 }
 
 @media only screen and (max-width: 1340px) {
