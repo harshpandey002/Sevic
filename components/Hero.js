@@ -1,9 +1,26 @@
+import { useEffect, useContext } from "react";
+import { useInView } from "react-intersection-observer";
+import ThemeContext from "@/context/ThemeContext";
 import styles from "@/styles/Hero.module.css";
 
 export default function Hero() {
   const heroText =
     "We create highly responsive applications with the remarkable aesthetics that deliver a spectrum of result oriented digital experience.";
   let i = -1;
+  const { setBackground } = useContext(ThemeContext);
+
+  const [txt, txtInView] = useInView({
+    threshold: 0.8,
+  });
+
+  useEffect(() => {
+    if (txtInView) {
+      setBackground("");
+    } else {
+      setBackground("#1f1f1f");
+    }
+  });
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -38,7 +55,7 @@ export default function Hero() {
             /> */}
           </div>
 
-          <p className={styles.text}>
+          <p ref={txt} className={styles.text}>
             {heroText.split(" ").map((text) => (
               <div key={i++}>
                 <p>{text}</p>

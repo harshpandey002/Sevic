@@ -1,8 +1,12 @@
 import Head from "next/head";
 import styles from "@/styles/Layout.module.css";
 import Header from "./Header";
+import { useContext } from "react";
+import ThemeContext from "@/context/ThemeContext";
 
 const Layout = ({ title, keywords, description, children }) => {
+  const { background } = useContext(ThemeContext);
+
   return (
     <div>
       <Head>
@@ -13,7 +17,7 @@ const Layout = ({ title, keywords, description, children }) => {
 
       {/* <Header /> */}
 
-      <div style={{ backgroundColor: "" }} className={styles.container}>
+      <div style={{ backgroundColor: background }} className={styles.container}>
         {children}
       </div>
     </div>

@@ -9,8 +9,8 @@ export default function Works() {
     threshold: 0.5,
     triggerOnce: true,
   });
-  const animation = useAnimation();
 
+  const animation = useAnimation();
   useEffect(() => {
     if (inView) {
       animation.start("animate");
