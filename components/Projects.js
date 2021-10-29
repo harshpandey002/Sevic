@@ -1,7 +1,7 @@
 import styles from "@/styles/Projects.module.css";
-import BeyondPinks from "./projects/BeyondPinks";
-import EduCompanion from "./projects/EduCompanion";
-import Hysea from "./projects/Hysea";
+import BeyondPinks from "./Projects/BeyondPinks";
+import EduCompanion from "./Projects/EduCompanion";
+import Hysea from "./Projects/Hysea";
 
 export default function Projects() {
   return (
