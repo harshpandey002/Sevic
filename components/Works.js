@@ -1,14 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import styles from "@/styles/Works.module.css";
 import { Parallax } from "react-scroll-parallax";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import ThemeContext from "@/context/ThemeContext";
 
 export default function Works() {
+  const { setBackground } = useContext(ThemeContext);
   const [ref, inView] = useInView({
-    threshold: 0.5,
     triggerOnce: true,
   });
+  const [theme, ThemeInView] = useInView();
 
   const animation = useAnimation();
   useEffect(() => {
@@ -18,6 +20,12 @@ export default function Works() {
       animation.start("initial");
     }
   });
+
+  useEffect(() => {
+    if (ThemeInView) {
+      setBackground("#cad9c3");
+    }
+  }, [ThemeInView]);
 
   const test = {
     initial: {
@@ -32,10 +40,12 @@ export default function Works() {
   const item = {
     initial: {
       opacity: 0,
+      scaleX: 0.6,
       y: 80,
     },
     animate: {
       opacity: 1,
+      scaleX: 1,
       y: 0,
       transition: { duration: 0.8, type: "ease" },
     },
@@ -44,6 +54,7 @@ export default function Works() {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
+        <div ref={theme} className={styles.scroller} />
         <Parallax y={[-35, 20]}>
           <div className={styles.heading}>
             <h1>Our Works</h1>

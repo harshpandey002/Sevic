@@ -12,10 +12,9 @@ export default function EduCompanion() {
 
   useEffect(() => {
     if (inView) {
-      // setBackground("#f5fcff");
-      setBackground("");
+      setBackground("#d4ced6");
     }
-  });
+  }, [inView]);
 
   return (
     <div className={styles.container}>
@@ -24,11 +23,11 @@ export default function EduCompanion() {
           <h1>EduCompanion</h1>
         </div>
 
-        <Box src="https://source.unsplash.com/random/400x301" name="one" />
-        <Box src="https://source.unsplash.com/random/400x320" name="two" />
-        <Box src="https://source.unsplash.com/random/400x310" name="three" />
-        <Box src="https://source.unsplash.com/random/400x312" name="four" />
-        <Box src="https://source.unsplash.com/random/400x311" name="five" />
+        <Box src="https://source.unsplash.com/random/430x301" name="one" />
+        <Box src="https://source.unsplash.com/random/402x320" name="two" />
+        <Box src="https://source.unsplash.com/random/410x315" name="three" />
+        <Box src="https://source.unsplash.com/random/423x312" name="four" />
+        <Box src="https://source.unsplash.com/random/410x311" name="five" />
       </div>
     </div>
   );

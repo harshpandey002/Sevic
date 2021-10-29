@@ -8,20 +8,17 @@ export default function Hero() {
     "We create highly responsive applications with the remarkable aesthetics that deliver a spectrum of result oriented digital experience.";
   let i = -1;
   const { setBackground } = useContext(ThemeContext);
-
   const [ref, inView] = useInView();
 
   useEffect(() => {
     if (inView) {
-      setBackground("");
-    } else {
-      setBackground("#1f1f1f");
+      setBackground("#e6e5e1");
     }
-  });
+  }, [inView]);
 
   return (
     <div className={styles.container}>
-      <div className={styles.content}>
+      <div ref={ref} className={styles.content}>
         <div className={styles.top}>
           <div className={styles.heading}>
             <div>
@@ -53,7 +50,7 @@ export default function Hero() {
             /> */}
           </div>
 
-          <p ref={ref} className={styles.text}>
+          <p className={styles.text}>
             {heroText.split(" ").map((text) => (
               <div key={i++}>
                 <p>{text}</p>

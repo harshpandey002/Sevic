@@ -12,10 +12,9 @@ export default function Hysea() {
 
   useEffect(() => {
     if (inView) {
-      //   setBackground("#f7f5ff");
-      setBackground("");
+      setBackground("#cfd6ce");
     }
-  });
+  }, [inView]);
 
   return (
     <div className={styles.container}>
@@ -24,11 +23,11 @@ export default function Hysea() {
           <h1>Hysea</h1>
         </div>
 
-        <Box src="https://source.unsplash.com/random/400x301" name="one" />
-        <Box src="https://source.unsplash.com/random/400x320" name="two" />
-        <Box src="https://source.unsplash.com/random/400x310" name="three" />
-        <Box src="https://source.unsplash.com/random/400x312" name="four" />
-        <Box src="https://source.unsplash.com/random/400x311" name="five" />
+        <Box src="https://source.unsplash.com/random/420x301" name="one" />
+        <Box src="https://source.unsplash.com/random/440x320" name="two" />
+        <Box src="https://source.unsplash.com/random/405x316" name="three" />
+        <Box src="https://source.unsplash.com/random/434x342" name="four" />
+        <Box src="https://source.unsplash.com/random/420x341" name="five" />
       </div>
     </div>
   );

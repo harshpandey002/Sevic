@@ -12,10 +12,9 @@ export default function BeyondPinks() {
 
   useEffect(() => {
     if (inView) {
-      // setBackground("#fffef5");
-      setBackground("#1f1f1f");
+      setBackground("#d6d4ce");
     }
-  });
+  }, [inView]);
 
   return (
     <div className={styles.container}>
@@ -24,11 +23,11 @@ export default function BeyondPinks() {
           <h1>Beyond Pinks</h1>
         </div>
 
-        <Box src="https://source.unsplash.com/random/411x311" name="one" />
-        <Box src="https://source.unsplash.com/random/400x321" name="two" />
-        <Box src="https://source.unsplash.com/random/410x320" name="three" />
-        <Box src="https://source.unsplash.com/random/401x312" name="four" />
-        <Box src="https://source.unsplash.com/random/410x321" name="five" />
+        <Box src="https://source.unsplash.com/random/511x311" name="one" />
+        <Box src="https://source.unsplash.com/random/482x321" name="two" />
+        <Box src="https://source.unsplash.com/random/450x320" name="three" />
+        <Box src="https://source.unsplash.com/random/406x312" name="four" />
+        <Box src="https://source.unsplash.com/random/420x321" name="five" />
       </div>
     </div>
   );
