@@ -9,12 +9,10 @@ export default function Hero() {
   let i = -1;
   const { setBackground } = useContext(ThemeContext);
 
-  const [txt, txtInView] = useInView({
-    threshold: 0.8,
-  });
+  const [ref, inView] = useInView();
 
   useEffect(() => {
-    if (txtInView) {
+    if (inView) {
       setBackground("");
     } else {
       setBackground("#1f1f1f");
@@ -55,7 +53,7 @@ export default function Hero() {
             /> */}
           </div>
 
-          <p ref={txt} className={styles.text}>
+          <p ref={ref} className={styles.text}>
             {heroText.split(" ").map((text) => (
               <div key={i++}>
                 <p>{text}</p>

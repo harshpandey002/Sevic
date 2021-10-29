@@ -1,14 +1,26 @@
-import styles from "@/styles/BeyondPinks.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useContext } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import ThemeContext from "@/context/ThemeContext";
 import Image from "next/image";
+import styles from "@/styles/BeyondPinks.module.css";
 
 export default function BeyondPinks() {
+  const { setBackground } = useContext(ThemeContext);
+
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      // setBackground("#fffef5");
+      setBackground("#1f1f1f");
+    }
+  });
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <div className={styles.heading}>
+        <div ref={ref} className={styles.heading}>
           <h1>Beyond Pinks</h1>
         </div>
 

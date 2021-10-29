@@ -1,14 +1,26 @@
-import styles from "@/styles/EduCompanion.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useContext } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import ThemeContext from "@/context/ThemeContext";
 import Image from "next/image";
+import styles from "@/styles/EduCompanion.module.css";
 
 export default function EduCompanion() {
+  const { setBackground } = useContext(ThemeContext);
+
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      // setBackground("#f5fcff");
+      setBackground("");
+    }
+  });
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <div className={styles.heading}>
+        <div ref={ref} className={styles.heading}>
           <h1>EduCompanion</h1>
         </div>
 
