@@ -8,7 +8,12 @@ const Layout = ({ title, keywords, description, children }) => {
   const { background } = useContext(ThemeContext);
 
   return (
-    <div>
+    <div
+      style={{
+        backgroundColor: background,
+        transition: "background-color 0.5s",
+      }}
+    >
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -17,9 +22,7 @@ const Layout = ({ title, keywords, description, children }) => {
 
       {/* <Header /> */}
 
-      <div style={{ backgroundColor: background }} className={styles.container}>
-        {children}
-      </div>
+      <div className={styles.container}>{children}</div>
     </div>
   );
 };
