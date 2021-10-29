@@ -13,7 +13,9 @@ const Layout = ({ title, keywords, description, children }) => {
 
       {/* <Header /> */}
 
-      <div className={styles.container}>{children}</div>
+      <div style={{ backgroundColor: "" }} className={styles.container}>
+        {children}
+      </div>
     </div>
   );
 };

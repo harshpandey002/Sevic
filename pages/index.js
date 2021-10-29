@@ -1,4 +1,3 @@
-import EduCompanion from "@/components/EduCompanion";
 import Hero from "@/components/Hero";
 import Layout from "@/components/Layout";
 import Projects from "@/components/Projects";
