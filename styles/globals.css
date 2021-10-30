@@ -22,7 +22,7 @@ body {
 }
 
 body {
-  overflow: overlay;
+  /* overflow: overlay; */
 }
 
 a {
