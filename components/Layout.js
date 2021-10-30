@@ -3,29 +3,27 @@ import styles from "@/styles/Layout.module.css";
 import Header from "./Header";
 import { useContext } from "react";
 import ThemeContext from "@/context/ThemeContext";
-import ScrollContainer from "@/components/ScrollContainer";
 
 const Layout = ({ title, keywords, description, children }) => {
   const { background } = useContext(ThemeContext);
 
   return (
-    <ScrollContainer>
-      <div
-        style={{
-          backgroundColor: background,
-          transition: "background-color 0.5s",
-        }}
-      >
-        <Head>
-          <title>{title}</title>
-          <meta name="description" content={description} />
-          <meta name="keywords" content={keywords} />
-        </Head>
+    <div
+      style={{
+        backgroundColor: background,
+        transition: "background-color 0.5s",
+      }}
+    >
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
+      </Head>
 
-        {/* <Header /> */}
-        <div className={styles.container}>{children}</div>
-      </div>
-    </ScrollContainer>
+      {/* <Header /> */}
+
+      <div className={styles.container}>{children}</div>
+    </div>
   );
 };
 
