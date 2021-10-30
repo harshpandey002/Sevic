@@ -27,6 +27,7 @@ export const setStyles = (spacer, container) => {
   container.classList.add("active");
 
   const containerHeight = container.getBoundingClientRect().height;
+  console.log(containerHeight);
   spacer.style.height = containerHeight + "px";
   spacer.style.width = "1px";
   spacer.style.position = "relative";
