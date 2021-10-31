@@ -76,3 +76,30 @@
     opacity: 1;
   }
 }
+
+@media only screen and (max-width: 660px) {
+  .container {
+    margin-block: 2rem;
+    height: max-content;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .heading {
+    text-orientation: initial;
+    writing-mode: initial;
+    transform: none;
+  }
+
+  .heading h1 {
+    font-size: 2rem;
+  }
+
+  .boxes {
+    width: 90%;
+    gap: 1rem;
+  }
+}
