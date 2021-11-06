@@ -12,7 +12,7 @@ export default function Hero() {
 
   useEffect(() => {
     if (inView) {
-      setBackground("#e6e5e1");
+      setBackground("");
     }
   }, [inView]);
 
