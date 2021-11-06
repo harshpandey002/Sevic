@@ -1,9 +1,16 @@
 .container {
   /* display: flex;
   flex-direction: column; */
-  /* height: max-content; */
+  height: 350vh;
   /* padding-top: 10rem; */
   /* gap: 200px; */
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  gap: 100vh;
+  /* opacity: 0; */
 }
 
 @media only screen and (max-width: 660px) {
