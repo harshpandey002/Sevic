@@ -1,3 +1,15 @@
 .container {
-  background-color: azure;
+  /* background-color: #cccccc; */
+  position: fixed;
+  top: 5%;
+  left: 0;
+  width: 100%;
+}
+
+.container nav {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
