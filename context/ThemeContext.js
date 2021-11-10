@@ -1,3 +1,4 @@
+import Cursor from "@/components/Cursor";
 import { createContext, useState } from "react";
 const ThemeContext = createContext();
 
@@ -11,6 +12,8 @@ export const ThemeProvider = ({ children }) => {
         setBackground,
       }}
     >
+      <Cursor />
+
       {children}
     </ThemeContext.Provider>
   );
