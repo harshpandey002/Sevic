@@ -35,10 +35,9 @@
 
 .squareImg {
   background-color: gray;
-  /* width: 400px;
-  height: 260px; */
   width: 35%;
   height: 35vh;
+  max-height: 260px;
   opacity: 0;
   transform-origin: top;
   animation: imageAnim 1.3s ease-out 0.6s normal forwards;
@@ -59,8 +58,8 @@
 .rectangleImg {
   background-color: gray;
   width: 45%;
-  /* height: 260px; */
   height: 40vh;
+  max-height: 260px;
   opacity: 0;
   transform-origin: top;
   animation: imageAnim 1.3s ease-out 1s normal forwards;

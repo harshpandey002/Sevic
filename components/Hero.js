@@ -30,7 +30,7 @@ export default function Hero() {
             <div>
               <h1>
                 <span style={{ color: "#9c9c9c" }}>Branding.</span>{" "}
-                <span style={{ color: "#727272" }}>Business Cunsulting.</span>{" "}
+                <span style={{ color: "#727272" }}>Business Consulting.</span>{" "}
               </h1>
             </div>
           </div>
