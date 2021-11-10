@@ -70,52 +70,52 @@ export default function Works() {
           <div className={styles.top}>
             <Box
               variants={item}
-              width={194}
-              height={334}
+              width="25%"
+              height="45vh"
               src="https://source.unsplash.com/random/500x401"
             />
             <Box
               variants={item}
-              width={247}
-              height={251}
+              width="30%"
+              height="35vh"
               src="https://source.unsplash.com/random/500x411"
             />
             <Box
               variants={item}
-              width={193}
-              height={334}
+              width="25%"
+              height="45vh"
               src="https://source.unsplash.com/random/500x410"
             />
             <Box
               variants={item}
-              width={248}
-              height={251}
+              width="30%"
+              height="35vh"
               src="https://source.unsplash.com/random/500x421"
             />
           </div>
           <div className={styles.bottom}>
             <Box
               variants={item}
-              width={248}
-              height={251}
+              width="30%"
+              height="35vh"
               src="https://source.unsplash.com/random/520x412"
             />
             <Box
               variants={item}
-              width={192}
-              height={335}
+              width="25%"
+              height="45vh"
               src="https://source.unsplash.com/random/520x402"
             />
             <Box
               variants={item}
-              width={247}
-              height={251}
+              width="30%"
+              height="35vh"
               src="https://source.unsplash.com/random/501x402"
             />
             <Box
               variants={item}
-              width={192}
-              height={335}
+              width="25%"
+              height="45vh"
               src="https://source.unsplash.com/random/502x402"
             />
           </div>

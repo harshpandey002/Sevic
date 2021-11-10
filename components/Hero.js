@@ -18,8 +18,8 @@ export default function Hero() {
 
   return (
     <div className={styles.container}>
-      <div ref={ref} className={styles.content}>
-        <div className={styles.top}>
+      <div className={styles.content}>
+        <div ref={ref} className={styles.top}>
           <div className={styles.heading}>
             <div>
               <h1>

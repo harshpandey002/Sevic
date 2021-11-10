@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "@/styles/Header.module.css";
 import { Spiral as Hamburger } from "hamburger-react";
 import Menu from "./Menu";
 
 export default function Header() {
   const [isOpen, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "initial";
+    }
+  }, [isOpen]);
 
   return (
     <div className={styles.container}>
@@ -25,7 +33,6 @@ export default function Header() {
       <div
         onClick={() => {
           setOpen(false);
-          window.styles.overflow = "hidden";
         }}
         className={`${styles.overlay} ${isOpen && `${styles.active}`}`}
       />
