@@ -10,7 +10,7 @@
   border-radius: 50%;
   pointer-events: none;
   transition: 0.3s;
-  transition-property: width, height, transform;
+  transition-property: width, height, background-color;
   background-color: black;
 }
 /* 
