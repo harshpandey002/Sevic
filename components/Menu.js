@@ -1,28 +1,91 @@
+import { useContext } from "react";
 import styles from "@/styles/Menu.module.css";
+import ThemeContext from "@/context/ThemeContext";
 
 export default function Menu({ isOpen }) {
+  const { setCursor } = useContext(ThemeContext);
+
+  const mouseOver = () => {
+    const style = {
+      width: "35px",
+      height: "35px",
+      backgroundColor: "white",
+      mixBlendMode: "difference",
+    };
+
+    setCursor({ style });
+  };
+
+  const mouseOut = () => {
+    const style = {
+      width: "10px",
+      height: "10px",
+      backgroundColor: "white",
+      mixBlendMode: "difference",
+    };
+
+    setCursor({ style });
+  };
+
   return (
     <div className={`${styles.container} ${isOpen && `${styles.active}`}`}>
       <div className={styles.content}>
-        <div className={styles.left}>
+        <div
+          onMouseOver={mouseOver}
+          onMouseOut={mouseOut}
+          className={styles.left}
+        >
           <p>Menu</p>
           <ul className={styles.nav_links}>
             <li>
-              <span name="Work">Work</span>
+              <div className={styles.flow} name="Work">
+                Work
+              </div>
             </li>
-            <li>About</li>
-            <li>Services</li>
-            <li>Tutorials</li>
-            <li>Contact</li>
+            <li>
+              <div className={styles.flow} name="About">
+                About
+              </div>
+            </li>
+            <li>
+              <div className={styles.flow} name="Services">
+                Services
+              </div>
+            </li>
+            <li>
+              <div className={styles.flow} name="Contact">
+                Contact
+              </div>
+            </li>
           </ul>
         </div>
-        <div className={styles.right}>
+        <div
+          onMouseOver={mouseOver}
+          onMouseOut={mouseOut}
+          className={styles.right}
+        >
           <p>Social</p>
           <ul className={styles.social_links}>
-            <li>Facebook</li>
-            <li>Instagram</li>
-            <li>Linkedin</li>
-            <li>Dribble</li>
+            <li>
+              <div className={styles.slow} name="Facebook">
+                Facebook
+              </div>
+            </li>
+            <li>
+              <div className={styles.slow} name="Instagram">
+                Instagram
+              </div>
+            </li>
+            <li>
+              <div className={styles.slow} name="LinkedIn">
+                LinkedIn
+              </div>
+            </li>
+            <li>
+              <div className={styles.slow} name="Dribble">
+                Dribble
+              </div>
+            </li>
           </ul>
         </div>
       </div>

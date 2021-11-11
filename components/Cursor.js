@@ -1,6 +1,5 @@
 import styles from "@/styles/Cursor.module.css";
 import { useEffect, useRef } from "react";
-import { lerp, getMousePos, getSiblings } from "@/util/util";
 
 export default function Cursor({ cursor }) {
   let mouse = { x: 0, y: 0 };
@@ -17,10 +16,21 @@ export default function Cursor({ cursor }) {
 
   const getMouse = (e) => {
     mouse = getMousePos(e);
-    console.log(mouse);
+    // console.log(mouse);
     // console.log(ref.current);
     ref.current.style.top = mouse.y + "px";
     ref.current.style.left = mouse.x + "px";
+  };
+
+  const getMousePos = (e) => {
+    let posx = 0;
+    let posy = 0;
+    if (!e) e = window.event;
+    if (e.clientX || e.clientY) {
+      posx = e.clientX;
+      posy = e.clientY;
+    }
+    return { x: posx, y: posy };
   };
 
   return (

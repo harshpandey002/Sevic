@@ -10,6 +10,7 @@ export const ThemeProvider = ({ children }) => {
       value={{
         background,
         setBackground,
+        cursor,
         setCursor,
       }}
     >

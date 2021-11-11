@@ -47,7 +47,7 @@
   font-size: 3rem;
   font-weight: 400;
   line-height: 1.3;
-  cursor: pointer;
+  cursor: none;
 }
 
 .social_links li {
@@ -55,7 +55,7 @@
   line-height: 2;
   font-size: 1.2rem;
   letter-spacing: -0.5px;
-  cursor: pointer;
+  cursor: none;
 }
 
 .link {
@@ -80,17 +80,37 @@
   }
 }
 
-/* .nav_links li span {
+.nav_links li,
+.social_links li {
+  transition: all 0.3s;
   overflow: hidden;
+}
+
+.flow,
+.slow {
   position: relative;
+  transition: all 0.5s ease-out;
 }
 
-.nav_links li span::before {
+.slow {
+  transition: all 0.4s ease-out;
+}
+
+.flow::before,
+.slow::before {
   position: absolute;
+  top: 60px;
+  left: 0px;
   content: attr(name);
-  bottom: 60px;
 }
 
-.nav_links li span:hover .nav_links li span::before {
-  bottom: 0;
-} */
+.slow::before {
+  top: 35px;
+}
+
+.nav_links li:hover .flow {
+  transform: translateY(-60px);
+}
+.social_links li:hover .slow {
+  transform: translateY(-35px);
+}

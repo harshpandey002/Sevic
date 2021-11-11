@@ -10,12 +10,17 @@ export default function Header() {
   const { setCursor } = useContext(ThemeContext);
 
   useEffect(() => {
+    const style = {};
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      style = {
+        backgroundColor: "white",
+        mixBlendMode: "difference",
+      };
     } else {
       document.body.style.overflow = "initial";
     }
-    setCursor({});
+    setCursor({ style });
   }, [isOpen]);
 
   const mouseOver = () => {
@@ -24,9 +29,16 @@ export default function Header() {
       height: "35px",
     };
 
-    const jsx = (
-      <div className="test">{isOpen ? <p>Close</p> : <p>Menu</p>}</div>
-    );
+    if (isOpen) {
+      style = {
+        width: "35px",
+        height: "35px",
+        backgroundColor: "white",
+        mixBlendMode: "difference",
+      };
+    }
+
+    const jsx = <div className="test">{isOpen ? <></> : <p>Menu</p>}</div>;
 
     setCursor({ style, jsx });
   };
@@ -46,6 +58,19 @@ export default function Header() {
     setCursor({ style, jsx });
   };
 
+  const mouseOut = () => {
+    const style = {};
+    if (isOpen) {
+      style = {
+        width: "10px",
+        height: "10px",
+        backgroundColor: "white",
+        mixBlendMode: "difference",
+      };
+    }
+    setCursor({ style });
+  };
+
   return (
     <div className={styles.container}>
       <nav>
@@ -54,7 +79,7 @@ export default function Header() {
         </div>
         <div
           onMouseOver={mouseOver}
-          onMouseOut={() => setCursor({})}
+          onMouseOut={mouseOut}
           className={styles.menu}
         >
           <Hamburger
@@ -71,7 +96,7 @@ export default function Header() {
           setOpen(false);
         }}
         onMouseOver={mouseOverlay}
-        onMouseOut={() => setCursor({})}
+        onMouseOut={mouseOut}
         className={`${styles.overlay} ${isOpen && `${styles.active}`}`}
       />
       <Menu isOpen={isOpen} />
