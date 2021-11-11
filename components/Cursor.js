@@ -24,7 +24,11 @@ export default function Cursor({ cursor }) {
   };
 
   return (
-    <div ref={ref} style={cursor.style} className={styles.cursor}>
+    <div
+      ref={ref}
+      style={cursor.style}
+      className={`${styles.cursor} ${cursor.blend && `${styles.blend}`}`}
+    >
       {cursor.jsx}
     </div>
   );

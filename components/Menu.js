@@ -7,7 +7,9 @@ export default function Menu({ isOpen }) {
         <div className={styles.left}>
           <p>Menu</p>
           <ul className={styles.nav_links}>
-            <li>Work</li>
+            <li>
+              <span name="Work">Work</span>
+            </li>
             <li>About</li>
             <li>Services</li>
             <li>Tutorials</li>

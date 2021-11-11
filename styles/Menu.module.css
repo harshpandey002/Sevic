@@ -79,3 +79,18 @@
     display: none;
   }
 }
+
+/* .nav_links li span {
+  overflow: hidden;
+  position: relative;
+}
+
+.nav_links li span::before {
+  position: absolute;
+  content: attr(name);
+  bottom: 60px;
+}
+
+.nav_links li span:hover .nav_links li span::before {
+  bottom: 0;
+} */
