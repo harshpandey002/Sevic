@@ -2,7 +2,7 @@ import styles from "@/styles/Cursor.module.css";
 import { useEffect, useRef } from "react";
 import { lerp, getMousePos, getSiblings } from "@/util/util";
 
-export default function Cursor() {
+export default function Cursor({ cursor }) {
   let mouse = { x: 0, y: 0 };
 
   const ref = useRef(null);
@@ -23,5 +23,9 @@ export default function Cursor() {
     ref.current.style.left = mouse.x + "px";
   };
 
-  return <div ref={ref} className={styles.cursor}></div>;
+  return (
+    <div ref={ref} style={cursor.style} className={styles.cursor}>
+      {cursor.jsx}
+    </div>
+  );
 }

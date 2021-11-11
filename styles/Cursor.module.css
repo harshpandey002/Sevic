@@ -1,5 +1,5 @@
 .cursor {
-  --radius: 30px;
+  --radius: 10px;
   position: fixed;
   top: 0px;
   left: 0px;
@@ -7,8 +7,12 @@
   width: var(--radius);
   height: var(--radius);
   transform: translate(-50%, -50%) scale(2);
-  background-color: white;
   border-radius: 50%;
   pointer-events: none;
-  mix-blend-mode: difference;
+  transition: 0.3s;
+  transition-property: width, height, transform;
+  background-color: black;
 }
+/* 
+.blend {
+} */

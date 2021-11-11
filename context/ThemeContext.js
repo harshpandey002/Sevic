@@ -4,16 +4,16 @@ const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
   const [background, setBackground] = useState("");
-
+  const [cursor, setCursor] = useState({});
   return (
     <ThemeContext.Provider
       value={{
         background,
         setBackground,
+        setCursor,
       }}
     >
-      <Cursor />
-
+      <Cursor cursor={cursor} />
       {children}
     </ThemeContext.Provider>
   );
