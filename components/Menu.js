@@ -89,7 +89,11 @@ export default function Menu({ isOpen }) {
           </ul>
         </div>
       </div>
-      <div className={styles.email}>
+      <div
+        onMouseOver={mouseOver}
+        onMouseOut={mouseOut}
+        className={styles.email}
+      >
         <p>Get in Touch</p>
         <p className={styles.link}>info@sevic.com</p>
       </div>
