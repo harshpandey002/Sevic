@@ -15,13 +15,13 @@ export default function Projects() {
       {project == "Hysea" && <Hysea />}
       <div className={styles.flex}>
         <ScrollTrigger onEnter={() => setProject("EduCompanion")}>
-          <p>EduCompanion</p>
+          <div className={styles.black} />
         </ScrollTrigger>
         <ScrollTrigger onEnter={() => setProject("BeyondPinks")}>
-          <p>BeyondPinks</p>
+          <div />
         </ScrollTrigger>
         <ScrollTrigger onEnter={() => setProject("Hysea")}>
-          <p>Hysea</p>
+          <div />
         </ScrollTrigger>
       </div>
     </div>
