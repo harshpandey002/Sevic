@@ -10,12 +10,12 @@ export default function Header() {
   const { setCursor } = useContext(ThemeContext);
 
   useEffect(() => {
-    mouseOver();
     if (isOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "initial";
     }
+    setCursor({});
   }, [isOpen]);
 
   const mouseOver = () => {
@@ -25,7 +25,7 @@ export default function Header() {
     };
 
     const jsx = (
-      <div className={styles.test}>{isOpen ? <p>Close</p> : <p>Menu</p>}</div>
+      <div className="test">{isOpen ? <p>Close</p> : <p>Menu</p>}</div>
     );
 
     setCursor({ style, jsx });
@@ -38,7 +38,7 @@ export default function Header() {
     };
 
     const jsx = (
-      <div className={styles.test}>
+      <div className="test">
         <p>Close</p>
       </div>
     );
