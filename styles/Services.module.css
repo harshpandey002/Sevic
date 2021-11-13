@@ -22,7 +22,6 @@
 }
 
 .left h3 {
-  color: gray;
   font-size: 2.3rem;
   font-weight: 400;
 }
@@ -32,13 +31,23 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .links li {
   font-family: var(--font);
   font-size: 3.3rem;
   font-weight: 300;
+  transition: color 0.3s;
+  color: gray;
+}
+
+.links:hover li {
+  color: gray;
+}
+
+.links:not(:hover) {
+  color: black;
 }
 
 .right {
@@ -52,17 +61,19 @@
 .rightImage {
   position: absolute;
   overflow: hidden;
-  width: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: width 0.5s ease-out;
+  /* transition: width 0.5s ease-out; */
+  opacity: 0;
 }
 .leftImage {
-  transform: translateX(-140px);
+  transform: translate(-140px, -80px);
+  animation: leftAnim 1s cubic-bezier(0.14, 0.6, 0.41, 0.99) 0s 1 forwards;
 }
 .rightImage {
-  transform: translate(140px, -80px);
+  transform: translate(140px, -160px);
+  animation: rightAnim 1s cubic-bezier(0.14, 0.6, 0.41, 0.99) 0.05s 1 forwards;
 }
 
 .leftImage img,
@@ -77,8 +88,28 @@
   width: 200px;
 } */
 
-@keyframes imageAnim {
+@keyframes leftAnim {
   0% {
-    transform: translate(-);
+    width: 100px;
+    transform: translate(-140px, -80px);
+    opacity: 1;
+  }
+  100% {
+    width: 250px;
+    transform: translate(-140px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes rightAnim {
+  0% {
+    width: 100px;
+    transform: translate(140px, -140px);
+    opacity: 1;
+  }
+  100% {
+    width: 250px;
+    transform: translate(140px, -80px);
+    opacity: 1;
   }
 }

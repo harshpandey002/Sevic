@@ -38,6 +38,13 @@ export default function Menu({ isOpen }) {
         >
           <p>Menu</p>
           <ul className={styles.nav_links}>
+            <Link href="/" passHref>
+              <li>
+                <div className={styles.flow} name="Home">
+                  Home
+                </div>
+              </li>
+            </Link>
             <li>
               <div className={styles.flow} name="Work">
                 Work
