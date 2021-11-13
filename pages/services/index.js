@@ -104,14 +104,15 @@ export default function Services() {
               </li>
             </ul>
           </div>
-          <MagicImage src={src} />
+          {/* <TwoImage src={src} /> */}
+          <ThreeImage />
         </div>
       </div>
     </Layout>
   );
 }
 
-export const MagicImage = ({ src }) => {
+export const TwoImage = ({ src }) => {
   return (
     <div className={styles.right}>
       {src.leftImage && (
@@ -124,6 +125,31 @@ export const MagicImage = ({ src }) => {
           <img src={src.rightImage} alt="" />
         </div>
       )}
+    </div>
+  );
+};
+
+export const ThreeImage = () => {
+  return (
+    <div className={styles.right}>
+      <div className={styles.one}>
+        <img
+          src="https://images.unsplash.com/photo-1634749724963-721227794e53?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5NTk2Ng&ixlib=rb-1.2.1&q=80&w=300"
+          alt=""
+        />
+      </div>
+      <div className={styles.two}>
+        <img
+          src="https://images.unsplash.com/photo-1635425031670-4928f00e517c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5NTk5Nw&ixlib=rb-1.2.1&q=80&w=300"
+          alt=""
+        />
+      </div>
+      <div className={styles.three}>
+        <img
+          src="https://images.unsplash.com/photo-1635939236098-855a6cf1c3e9?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5NjgzOQ&ixlib=rb-1.2.1&q=80&w=300"
+          alt=""
+        />
+      </div>
     </div>
   );
 };
