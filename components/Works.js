@@ -33,21 +33,19 @@ export default function Works() {
     },
     animate: {
       opacity: 1,
-      transition: { staggerChildren: 0.15, staggerDirection: 1 },
+      transition: { staggerChildren: 0.05, staggerDirection: 1 },
     },
   };
 
   const item = {
     initial: {
       opacity: 0,
-      scaleX: 0.6,
-      y: 80,
+      y: 200,
     },
     animate: {
       opacity: 1,
-      scaleX: 1,
       y: 0,
-      transition: { duration: 0.8, type: "ease" },
+      transition: { duration: 0.5, type: "ease-out" },
     },
   };
 

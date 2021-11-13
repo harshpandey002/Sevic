@@ -39,6 +39,10 @@ export default function Services() {
   const [src, setSrc] = useState(source[0]);
   const { setBackground, setFont, setCursor } = useContext(ThemeContext);
 
+  useEffect(() => {
+    setBackground("white");
+  }, []);
+
   const mouseOver = (e, x) => {
     const fontColor = "black";
     const backgroundColor = "#F5F5F5";
