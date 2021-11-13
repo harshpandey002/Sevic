@@ -1,24 +1,25 @@
 .container {
   height: 100vh;
-  min-height: 700px;
+  /* min-height: 700px; */
   display: flex;
   align-items: flex-end;
   padding-bottom: 4.5rem;
 }
 
 .content {
-  /* background-color: #fbfbfb; */
   width: 85%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
 .left {
-  width: 560px;
+  width: 600px;
   display: flex;
   flex-direction: column;
   gap: 4.5rem;
+  z-index: 3;
 }
 
 .left h3 {
@@ -41,6 +42,7 @@
   font-weight: 300;
   transition: color 0.3s;
   color: gray;
+  cursor: none;
 }
 
 .links:hover li {
@@ -52,7 +54,7 @@
 }
 
 .right {
-  /* background-color: lightgray; */
+  right: 0;
   width: 630px;
   display: flex;
   align-items: center;
@@ -136,13 +138,13 @@
   animation: threeAnim 1s cubic-bezier(0.14, 0.6, 0.41, 0.99) 0.15s 1 forwards;
 }
 
-/* .one img,
+.one img,
 .two img,
 .three img {
   width: 280px;
   height: 400px;
   object-fit: cover;
-} */
+}
 
 @keyframes oneAnim {
   0% {
@@ -180,5 +182,44 @@
     width: 280px;
     transform: translate(40px, 70px);
     opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 1320px) {
+  .content {
+    width: 90%;
+  }
+
+  .links li {
+    font-size: 3rem;
+  }
+
+  .right {
+    width: 550px;
+  }
+}
+
+@media only screen and (max-width: 1070px) {
+  .right {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  .container {
+    align-items: center;
+  }
+
+  .left {
+    margin-top: 3rem;
+  }
+
+  .links {
+    padding: 0;
+  }
+
+  .links li {
+    font-size: 2rem;
+    cursor: pointer;
   }
 }
