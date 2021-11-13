@@ -1,0 +1,43 @@
+.container {
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 4.5rem;
+}
+
+.content {
+  /* background-color: #fbfbfb; */
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.left {
+  width: 550px;
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+}
+.right {
+  flex: 1;
+  position: relative;
+}
+
+.left h3 {
+  color: gray;
+  font-size: 2.3rem;
+  font-weight: 400;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.links li {
+  font-family: var(--font);
+  font-size: 3.2rem;
+}

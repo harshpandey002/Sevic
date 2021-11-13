@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import styles from "@/styles/Menu.module.css";
 import ThemeContext from "@/context/ThemeContext";
+import Link from "next/link";
 
 export default function Menu({ isOpen }) {
   const { setCursor } = useContext(ThemeContext);
@@ -47,11 +48,13 @@ export default function Menu({ isOpen }) {
                 About
               </div>
             </li>
-            <li>
-              <div className={styles.flow} name="Services">
-                Services
-              </div>
-            </li>
+            <Link href="/services" passHref>
+              <li>
+                <div className={styles.flow} name="Services">
+                  Services
+                </div>
+              </li>
+            </Link>
             <li>
               <div className={styles.flow} name="Contact">
                 Contact
