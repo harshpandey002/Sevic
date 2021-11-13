@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Layout from "@/components/Layout";
 import styles from "@/styles/Services.module.css";
 import { motion } from "framer-motion";
@@ -6,78 +6,99 @@ import ThemeContext from "@/context/ThemeContext";
 
 const source = [
   {
-    leftImage: "",
-    rightImage: "",
+    one: "",
+    two: "",
   },
   {
-    leftImage:
-      "https://images.unsplash.com/photo-1634433480491-07e21ad0af5a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5MDY0NQ&ixlib=rb-1.2.1&q=80&w=300",
-    rightImage:
-      "https://images.unsplash.com/photo-1634113755405-4c34d7abcbb7?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5MDY2NA&ixlib=rb-1.2.1&q=80&w=300",
+    one: "https://images.unsplash.com/photo-1636216713187-c5031b0a441d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5NjY4NQ&ixlib=rb-1.2.1&q=80&w=300",
+    two: "https://images.unsplash.com/photo-1635099065551-41a013869020?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5NjYyMQ&ixlib=rb-1.2.1&q=80&w=300",
   },
   {
-    leftImage:
-      "https://images.unsplash.com/photo-1634749724963-721227794e53?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5NTk2Ng&ixlib=rb-1.2.1&q=80&w=300",
-    rightImage:
-      "https://images.unsplash.com/photo-1635425031670-4928f00e517c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5NTk5Nw&ixlib=rb-1.2.1&q=80&w=300",
-  },
-  {
-    leftImage:
+    one: "https://images.unsplash.com/photo-1635589843460-c2b760341882?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5NjA0Mw&ixlib=rb-1.2.1&q=80&w=300",
+    two: "https://images.unsplash.com/photo-1634588174678-4672a6bcd830?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5NjAxOQ&ixlib=rb-1.2.1&q=80&w=300",
+    three:
       "https://images.unsplash.com/photo-1635939236098-855a6cf1c3e9?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5NjgzOQ&ixlib=rb-1.2.1&q=80&w=300",
-    rightImage:
-      "https://images.unsplash.com/photo-1632624011013-baf2251f5de0?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5NjAzNA&ixlib=rb-1.2.1&q=80&w=300",
   },
   {
-    leftImage:
-      "https://images.unsplash.com/photo-1635589843460-c2b760341882?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5NjA0Mw&ixlib=rb-1.2.1&q=80&w=300",
-    rightImage:
-      "https://images.unsplash.com/photo-1634588174678-4672a6bcd830?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5NjAxOQ&ixlib=rb-1.2.1&q=80&w=300",
+    one: "https://images.unsplash.com/photo-1634433480491-07e21ad0af5a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5MDY0NQ&ixlib=rb-1.2.1&q=80&w=300",
+    two: "https://images.unsplash.com/photo-1634113755405-4c34d7abcbb7?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5MDY2NA&ixlib=rb-1.2.1&q=80&w=300",
   },
   {
-    leftImage:
-      "https://images.unsplash.com/photo-1636216713187-c5031b0a441d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5NjY4NQ&ixlib=rb-1.2.1&q=80&w=300",
-    rightImage:
-      "https://images.unsplash.com/photo-1635099065551-41a013869020?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5NjYyMQ&ixlib=rb-1.2.1&q=80&w=300",
+    one: "https://images.unsplash.com/photo-1634749724963-721227794e53?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5NTk2Ng&ixlib=rb-1.2.1&q=80&w=300",
+    two: "https://images.unsplash.com/photo-1635425031670-4928f00e517c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5NTk5Nw&ixlib=rb-1.2.1&q=80&w=300",
+    three:
+      "https://images.unsplash.com/photo-1634433480491-07e21ad0af5a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5MDY0NQ&ixlib=rb-1.2.1&q=80&w=300",
+  },
+  {
+    one: "https://images.unsplash.com/photo-1635794275221-4d8cf075d461?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjgxODA4NA&ixlib=rb-1.2.1&q=80&w=300",
+    two: "https://images.unsplash.com/photo-1635362877765-9d6ac192b996?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjgxODA0Nw&ixlib=rb-1.2.1&q=80&w=300",
   },
 ];
 
 export default function Services() {
   const [src, setSrc] = useState(source[0]);
-  const { setBackground, setFont } = useContext(ThemeContext);
+  const { setBackground, setFont, setCursor } = useContext(ThemeContext);
 
   const mouseOver = (e, x) => {
     const fontColor = "black";
     const backgroundColor = "#F5F5F5";
 
+    const style = {
+      width: "35px",
+      height: "35px",
+      backgroundColor: "white",
+      mixBlendMode: "difference",
+    };
+
     switch (e.target.innerHTML) {
       case "Website Development":
         backgroundColor = "#131313";
         fontColor = "#ffffff";
+        // style = {
+        //   width: "35px",
+        //   height: "35px",
+        //   backgroundColor: "white",
+        //   mixBlendMode: "difference",
+        // };
         break;
       case "UI/UX Design":
-        backgroundColor = "#CBCBCB";
         break;
       case "Business Consulting":
         backgroundColor = "#ffffff";
+
         break;
       case "Digital Marketing":
         backgroundColor = "#131313";
         fontColor = "#ffffff";
+        // style = {
+        //   width: "35px",
+        //   height: "35px",
+        //   backgroundColor: "white",
+        //   mixBlendMode: "difference",
+        // };
         break;
       case "Something Else":
         break;
     }
+
+    e.target.style.color = fontColor;
     setFont(fontColor);
     setBackground(backgroundColor);
-    e.target.style.color = fontColor;
     setSrc(source[x]);
+    setCursor({ style });
   };
 
   const mouseOut = (e) => {
+    const style = {
+      width: "10px",
+      height: "10px",
+    };
+
     e.target.style.color = "gray";
     setBackground("white");
     setFont("black");
     setSrc(source[0]);
+    setCursor({ style });
   };
 
   return (
@@ -87,7 +108,7 @@ export default function Services() {
           <div className={styles.left}>
             <h3>Our Services</h3>
             <ul className={styles.links}>
-              <li onMouseOver={(e) => mouseOver(e, 5)} onMouseOut={mouseOut}>
+              <li onMouseOver={(e) => mouseOver(e, 1)} onMouseOut={mouseOut}>
                 Website Development
               </li>
               <li onMouseOver={(e) => mouseOver(e, 2)} onMouseOut={mouseOut}>
@@ -99,56 +120,46 @@ export default function Services() {
               <li onMouseOver={(e) => mouseOver(e, 4)} onMouseOut={mouseOut}>
                 Digital Marketing
               </li>
-              <li onMouseOver={(e) => mouseOver(e, 1)} onMouseOut={mouseOut}>
+              <li onMouseOver={(e) => mouseOver(e, 5)} onMouseOut={mouseOut}>
                 Something Else
               </li>
             </ul>
           </div>
-          {/* <TwoImage src={src} /> */}
-          <ThreeImage />
+          {!!src.three ? <ThreeImage src={src} /> : <TwoImage src={src} />}
         </div>
       </div>
     </Layout>
   );
 }
 
-export const TwoImage = ({ src }) => {
+const TwoImage = ({ src }) => {
   return (
     <div className={styles.right}>
-      {src.leftImage && (
+      {!!src.one && (
         <div className={styles.leftImage}>
-          <img src={src.leftImage} alt="" />
+          <img src={src.one} alt="" />
         </div>
       )}
-      {src.leftImage && (
+      {!!src.two && (
         <div className={styles.rightImage}>
-          <img src={src.rightImage} alt="" />
+          <img src={src.two} alt="" />
         </div>
       )}
     </div>
   );
 };
 
-export const ThreeImage = () => {
+const ThreeImage = ({ src }) => {
   return (
     <div className={styles.right}>
       <div className={styles.one}>
-        <img
-          src="https://images.unsplash.com/photo-1634749724963-721227794e53?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5NTk2Ng&ixlib=rb-1.2.1&q=80&w=300"
-          alt=""
-        />
+        <img src={src.one} alt="" />
       </div>
       <div className={styles.two}>
-        <img
-          src="https://images.unsplash.com/photo-1635425031670-4928f00e517c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5NTk5Nw&ixlib=rb-1.2.1&q=80&w=300"
-          alt=""
-        />
+        <img src={src.two} alt="" />
       </div>
       <div className={styles.three}>
-        <img
-          src="https://images.unsplash.com/photo-1635939236098-855a6cf1c3e9?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzNjc5NjgzOQ&ixlib=rb-1.2.1&q=80&w=300"
-          alt=""
-        />
+        <img src={src.three} alt="" />
       </div>
     </div>
   );
