@@ -5,13 +5,14 @@ import { useContext } from "react";
 import ThemeContext from "@/context/ThemeContext";
 
 const Layout = ({ title, keywords, description, children }) => {
-  const { background } = useContext(ThemeContext);
+  const { background, font } = useContext(ThemeContext);
 
   return (
     <div
       style={{
         backgroundColor: background,
-        transition: "background-color 0.5s",
+        color: font,
+        transition: "background-color 0.3s",
       }}
     >
       <Head>

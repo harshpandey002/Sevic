@@ -24,6 +24,7 @@
 .left h3 {
   font-size: 2.3rem;
   font-weight: 400;
+  transition: color 0.3s;
 }
 
 .links {
@@ -67,10 +68,12 @@
   /* transition: width 0.5s ease-out; */
   opacity: 0;
 }
+
 .leftImage {
   transform: translate(-140px, -80px);
   animation: leftAnim 1s cubic-bezier(0.14, 0.6, 0.41, 0.99) 0s 1 forwards;
 }
+
 .rightImage {
   transform: translate(140px, -160px);
   animation: rightAnim 1s cubic-bezier(0.14, 0.6, 0.41, 0.99) 0.05s 1 forwards;

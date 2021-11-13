@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import Layout from "@/components/Layout";
 import styles from "@/styles/Services.module.css";
 import { motion } from "framer-motion";
+import ThemeContext from "@/context/ThemeContext";
 
 const source = [
   {
@@ -42,14 +43,40 @@ const source = [
 
 export default function Services() {
   const [src, setSrc] = useState(source[0]);
+  const { setBackground, setFont } = useContext(ThemeContext);
 
   const mouseOver = (e, x) => {
-    e.target.style.color = "black";
+    const fontColor = "black";
+    const backgroundColor = "#F5F5F5";
+
+    switch (e.target.innerHTML) {
+      case "Website Development":
+        backgroundColor = "#131313";
+        fontColor = "#ffffff";
+        break;
+      case "UI/UX Design":
+        backgroundColor = "#CBCBCB";
+        break;
+      case "Business Consulting":
+        backgroundColor = "#ffffff";
+        break;
+      case "Digital Marketing":
+        backgroundColor = "#131313";
+        fontColor = "#ffffff";
+        break;
+      case "Something Else":
+        break;
+    }
+    setFont(fontColor);
+    setBackground(backgroundColor);
+    e.target.style.color = fontColor;
     setSrc(source[x]);
   };
 
   const mouseOut = (e) => {
     e.target.style.color = "gray";
+    setBackground("white");
+    setFont("black");
     setSrc(source[0]);
   };
 
